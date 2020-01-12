@@ -1,0 +1,12 @@
+#!/bin/sh
+version=2.0.0
+source="https://github.com/ryanoasis/nerd-fonts/releases/download/v$version/DejaVuSansMono.zip"
+sha512="92f8f0a41774ec78ae4e4addb811ba5cae1f904ee14bf54eb0e64662fa0ee2a1a73220b15e1e83679badd4eaeae0fcc6f8790fd8d5aea89a8957ba79c5136baf  DejaVuSansMono.zip"
+build() {
+    mkdir -p "$DESTDIR"/home/.fonts
+    for f in *; do
+        if ! echo "$f" | grep -i windows; then
+            install -D -m 0644 "$f" "$DESTDIR/home/.fonts/$f"
+        fi
+    done
+}
