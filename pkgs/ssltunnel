@@ -1,0 +1,7 @@
+version=1.1.0
+source="https://github.com/jakebasile/ssltunnel/archive/v$version.tar.gz"
+sha512="1d8a27371f1ea480f45c5cd5c7987bf4c9cad61e3897d048aa3405a105e07826fdb8d7ae1f33df11aedb3d3110bf9f60e140fe2c78012a05b14d0834a7f9a1e4  v$version.tar.gz"
+build() {
+    go build
+    install -D -m 0755 "ssltunnel-$version" "$DESTDIR"/bin/ssltunnel
+}
