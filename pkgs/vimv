@@ -1,0 +1,6 @@
+version=4152496c1946f68a13c648fb7e583ef23dac4eb8
+source="https://github.com/thameera/vimv/archive/$version.tar.gz"
+sha512="19cc0229f44fbd0f8e65459b8224a9660f63f393720d71bd5dcab0324580498301ed3f768f2087fc7b08b35c3057dca0269f151dd37e2caaa7b3c577bbc33561  $version.tar.gz"
+build() {
+    install -D -m 0755 vimv "$DESTDIR"/home/bin/vimv
+}
