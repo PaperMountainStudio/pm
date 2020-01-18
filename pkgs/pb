@@ -3,6 +3,6 @@ version=1e3772a514f9df4cfd75e7201691e58f5e3d44a9
 source="https://tildegit.org/tomasino/pb/archive/$version.tar.gz"
 sha512="db576a4b594627b945baa8edb3080ebadfb23c800d3c45ab64a12dc1861a284ca82a6d41016732a20002bdfd658a342fc42be8ba03a55da18f467dc9dd819476  $version.tar.gz"
 build() {
-	install -D -m 0755 pb "$DESTDIR"/usr/local/bin/pb
-	install -D -m 0644 pb.1 "$DESTDIR"/usr/local/share/man/man1/pb.1
+	install -D -m 0755 pb "$DESTDIR"/bin/pb
+	install -D -m 0644 pb.1 "$DESTDIR"/share/man/man1/pb.1
 }
