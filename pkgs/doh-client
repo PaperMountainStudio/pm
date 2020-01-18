@@ -1,0 +1,16 @@
+version=2.2.1
+source="https://github.com/m13253/dns-over-https/archive/v$version.tar.gz"
+sha512="a8156562d301ef56d3e4470116052c9c528deb80946a755495155ed4ed889941bfd0d03cec8fdcb429236b5fefe0f9fcb897afa22eef6e4a830c31715701a781  v$version.tar.gz"
+build() {
+    make
+	make doh-client/doh-client
+	#make doh-server/doh-server
+	mkdir -p "$DESTDIR/bin/"
+	install -D -m 0755 doh-client/doh-client "$DESTDIR/bin/doh-client"
+	#install -D -m 0755 doh-server/doh-server "$DESTDIR/bin/doh-server"
+	mkdir -p "$DESTDIR/etc/dns-over-https"
+	install -D -m 0644 doh-client/doh-client.conf "$DESTDIR/etc/dns-over-https/doh-client.conf.example"
+	#install -D -m 0644 doh-server/doh-server.conf "$DESTDIR/etc/dns-over-https/doh-server.conf.example"
+	install -D -m 0644 doh-client/doh-client.conf "$DESTDIR/etc/dns-over-https/doh-client.conf"
+	#install -D -m 0644 doh-server/doh-server.conf "$DESTDIR/etc/dns-over-https/doh-server.conf"
+}
