@@ -1,2 +1,4 @@
 [ ] detect new versions
 [ ] detect new commits (when git is used for downloading)
+[ ] during install time, let user decide the install PREFIX - /bin can be /usr/local/bin...
+but do not move /etc, handle /share propertly (manpages)
