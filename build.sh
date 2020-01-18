@@ -1,5 +1,6 @@
 #!/bin/sh -e
 dl() {
+    mkdir -p "$PWD/cache"
     cd "$PWD/cache"
     curl -OL "$1"
     cd ..
