@@ -1,0 +1,8 @@
+version=1.1.4
+source="gopher://bitreich.org/9/releases/clic/clic-v$version.tgz"
+sha512="21733ca5ea2dac8182b03ec4134635d71d9591952ef494a315aae8f1bf2ccd19e7b8508f5378ee6e4eda07149564e3ba1794bb6ff99a7865c59598fcacacd7e0  clic-v1.1.4.tgz"
+build() {
+    make
+    install -D -m 0755 clic "$DESTDIR/bin/clic"
+    install -D -m 0644 clic.1 "$DESTDIR/share/man/man1/clic.1"
+}
