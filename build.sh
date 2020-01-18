@@ -10,7 +10,7 @@ extract() {
     if echo "$file" | grep '\.zip$'; then
         unzip "$file"
     fi
-    if echo "$file" | grep -E '\.tar$|\.tar\.xz$|\.tar\.gz$|\.tar\.lz4$|\.tar.bz2$'; then
+    if echo "$file" | grep -E '\.tar$|\.tar\.xz$|\.txz$|\.tar\.gz$|\.tgz$|\.tar\.lz4$|\.tar.bz2$'; then
         tar -xf "$file"
     fi
 }
